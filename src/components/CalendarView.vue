@@ -3,10 +3,11 @@
     <b-field label="Select a date">
       <b-datepicker
         v-model="selected"
+        :date-formatter="dateFormatter"
         :show-week-number="showWeekNumber"
         :locale="locale"
+        :selectable-dates="selectableDates"
         placeholder="Click to select..."
-        icon="calendar-today"
         trap-focus>
       </b-datepicker>
     </b-field>
@@ -14,16 +15,37 @@
 </template>
 
 <script>
+import moment from 'moment-timezone'
+
 export default {
   name: 'CalendarView',
-  props: {
-    msg: String
-  },
   data() {
     return {
       selected: new Date(),
       showWeekNumber: false,
-      locale: undefined // Browser locale
+      locale: undefined,
+      selectableDates: [],
+    }
+  },
+  mounted() {
+    this.setSelctableDates()
+  },
+  methods: {
+    dateFormatter(date){
+      return moment(date).format("MM/DD/YYYY")
+    },
+    setSelctableDates() {
+      const dates = [
+        { date: "2020-11-02" },
+        { date: "2020-11-04" },
+        { date: "2020-11-05" },
+        { date: "2020-11-07" },
+        { date: "2020-11-08" }
+      ]
+      dates.forEach(item => {
+        const dateItem = moment(item.date).utcOffset(item.date).toDate();
+        this.selectableDates.push(dateItem)
+      })
     }
   }
 }
@@ -56,5 +78,4 @@ export default {
       font-size: 1rem;
     }
   }
-  
 </style>
