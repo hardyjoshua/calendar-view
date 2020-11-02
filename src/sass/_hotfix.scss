@@ -1,0 +1,182 @@
+/* ------------------------------ 
+    Hotfix - use this file to drop in quick fix style overrides until styles are moved to permanent location.
+------------------------------*/
+
+nav,
+nav a,
+footer,
+button,
+.button,
+input,
+.input,
+select,
+.select,
+label,
+.label {
+  font-family: $family-headline;
+}
+
+.pagination-link {
+  &.is-current {
+    background-color: $primary;
+  }
+}
+
+.padded {
+  padding: 1em;
+}
+
+ul {
+  list-style-type: initial;
+  margin-left: 1em;
+  li {
+    list-style-type: initial;
+    p {
+      margin-bottom: 0.5em;
+    }
+  }
+}
+
+.loading-overlay .loading-background {
+  background-color: white;
+}
+
+.loading-overlay {
+  .loading-icon {
+    &:after {
+      border: 2px solid #02b1b2 !important;
+      border-radius: 290486px !important;
+      border-right-color: transparent !important;
+      border-top-color: transparent !important;
+    }
+  }
+}
+
+.b-table.is-loading {
+  table {
+    opacity: 0;
+  }
+}
+
+.is-fullwidth {
+  width: 100%;
+}
+
+.box {
+  .inner-content {
+    padding: 1em;
+  }
+}
+
+.test-barcode {
+  // position: absolute;
+  top: 250px;
+  right: 50%;
+  overflow: hidden;
+  min-width: 150px;
+  min-height: 100px;
+  border: 1px solid lightgrey;
+}
+
+@include tablet {
+  .box {
+    .inner-content {
+      padding: 1em 4em;
+    }
+  }
+  .test-barcode {
+    top: 80px;
+    right: 20px;
+  }
+}
+
+hr {
+  &.stripe {
+    max-width: 20%;
+    border: 1px solid $teal;
+    background-color: $teal;
+  }
+}
+
+.box {
+  border-radius: $baseUnit * 5;
+}
+
+section.hero {
+  // background-color: lightgray;
+}
+
+.has-extended-data {
+  ul li p {
+    font-size: 14px;
+    color: dimgray;
+  }
+}
+
+.b-radio.radio,
+.b-checkbox.checkbox {
+  align-items: flex-start;
+}
+
+.box.padded.has-header {
+  padding: 0;
+  overflow: hidden;
+
+  header {
+    background-color: #162133;
+    color: white;
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+    h6 {
+      padding: 20px;
+    }
+  }
+}
+.is-8.is-offset-2 {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+label.has-text-primary .control-label {
+  color: #02b1b2;
+  margin-bottom: 1em;
+}
+
+.modal {
+  &.is-active {
+    z-index: 9999;
+    .modal-content {
+      opacity: 1;
+    }
+  }
+}
+
+@media print {
+  .no-print,
+  .no-print * {
+    display: none !important;
+  }
+
+  .rx {
+    h5.subtitle {
+      font-size: 10px;
+    }
+  }
+}
+
+a.box:hover,
+a.box:focus {
+  text-decoration: none;
+  a {
+    text-decoration: none;
+  }
+}
+
+.appointment-details-summary {
+  padding: 1em;
+  border: 1px solid lightgray;
+}
+
+#app {
+  z-index: 5;
+}

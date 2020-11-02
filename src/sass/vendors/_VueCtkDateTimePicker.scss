@@ -1,0 +1,36 @@
+// VueCtkDateTimePicker
+
+.data_time_picker_holder {
+  position: relative;
+}
+
+.incrementer {
+  position: relative;
+  z-index: 1;
+  left: 1px;
+  top: 0;
+
+  button {
+    position: absolute;
+    height: 16px;
+    border: none;
+    box-shadow: none;
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    &.increment-up {
+      top: 21px;
+    }
+
+    &.increment-down {
+      top: 3px;
+    }
+  }
+}
+
+.data_time_picker_holder .field-input,
+.data_time_picker_holder .field-input.no-clear-button {
+  border-radius: 0;
+}

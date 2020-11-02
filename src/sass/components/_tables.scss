@@ -1,0 +1,13 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the table components.
+// -----------------------------------------------------------------------------
+li.VuePagination__pagination-item {
+  list-style-type: none;
+}
+.pagination-link.is-current {
+  border-color: $primary;
+  background-color: white;
+  a {
+    color: $primary;
+  }
+}

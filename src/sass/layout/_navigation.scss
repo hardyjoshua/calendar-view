@@ -1,0 +1,38 @@
+/*Navigation*/
+/*target the currently active route router link*/
+.navbar-menu,
+nav[role="navigation"] {
+  font-size: $baseUnit * 3.5;
+  .authenticated & {
+    background-color: $navy;
+    a {
+      color: $white;
+      font-weight: normal;
+      &.navbar-item,
+      &.navbar-link {
+        &:focus,
+        &:hover {
+          background-color: $navy;
+          color: $teal;
+        }
+      }
+    }
+  }
+  .button.is-primary:hover, .button.is-primary.is-hovered{
+    border-color: white;
+  }
+}
+nav[role="navigation"] {
+  margin-bottom: 2em;
+}
+
+
+header {
+  background-color: $navy;
+  color: #ffffff;
+
+  h1 {
+    color: inherit;
+    text-transform: capitalize;
+  }
+}

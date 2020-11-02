@@ -1,0 +1,549 @@
+// -----------------------------------------------------------------------------
+// Page Layout Elements, targeting within <main>
+// -----------------------------------------------------------------------------
+
+$newRed: #dc5759;
+$newGreen: #80c925;
+$newTeal: #52b0b1;
+$newNavyBlue: #162133;
+$primary-color-mint: #8cc4b5;
+$light-thin-grey-shade: rgb(115, 122, 133);
+
+// section {
+//   // padding: $gapUnit*3 0;
+// }
+* {
+  font-family: "gotham", Arial, Helvetica, sans-serif;
+}
+.tile {
+  &.is-child.box {
+    padding: 2rem;
+
+    .is-3 {
+      margin-bottom: 4rem;
+
+      span {
+        border-bottom: 5px solid #000;
+        padding-bottom: 3px;
+      }
+    }
+
+    .is-danger.box {
+      background-color: $newRed;
+    }
+
+    .is-success.box {
+      background-color: $newGreen;
+    }
+
+    .notification {
+      .icon-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+  }
+}
+.column.is-flex {
+  flex-direction: column;
+  & > * {
+    flex: 1;
+  }
+}
+
+.is-underline {
+  text-decoration: underline;
+}
+
+// specific elements
+#test-questions {
+  margin-bottom: 1rem;
+}
+#view-test-button {
+  padding-left: 5rem;
+  padding-right: 5rem;
+}
+// #lets-connect {
+//   margin-bottom: 0.3rem;
+// }
+#Senneca-diagnostics {
+  margin-bottom: 2rem;
+}
+
+i.fa-clock,
+i.fa-map-marker-alt {
+  margin-right: 0.5rem;
+}
+
+.button-bottom-row {
+  display: flex;
+  align-items: flex-end;
+}
+
+.collapse {
+  &.card {
+    box-shadow: none;
+    margin-bottom: 1rem;
+    background-color: transparent;
+  }
+  .card-header {
+    background-color: $newNavyBlue;
+    border-radius: 20px;
+    padding: 0 1em 0 2em;
+    p {
+      color: #fff;
+      margin-bottom: 0;
+      padding: 1rem;
+      font-size: 1rem;
+      line-height: 1.2;
+    }
+  }
+}
+
+.table {
+  td {
+    border: none;
+    padding: 0;
+  }
+
+  .td-icon {
+    display: flex;
+    justify-content: center;
+    margin-right: 0.3rem;
+  }
+}
+
+#my-test-results-box {
+  div.card {
+    background-color: $primary-color-mint;
+    border-radius: 25px;
+    height: 100%;
+    display: flex;
+    padding: 1em;
+    box-shadow: none;
+  }
+  .is-3 {
+    margin-bottom: 2rem;
+    span {
+      border-bottom: 3px solid #000;
+      padding-bottom: 3px;
+    }
+  }
+
+  .icon {
+    color: hsl(0, 0%, 48%);
+    background-color: none;
+    background: none;
+    border: none;
+  }
+  div.results-card-inner {
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+
+    .results-card-header {
+      display: flex;
+      justify-content: space-between;
+    }
+    .results-card-title {
+      position: absolute;
+      bottom: 1em;
+      p,
+      a {
+        width: 100%;
+      }
+    }
+  }
+
+  .results-card-button {
+    margin-top: auto;
+    display: flex;
+    justify-content: flex-start;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    button {
+      margin: 0;
+      height: 100%;
+      background-color: $primary-color-mint;
+      border: none;
+      color: #fff;
+      width: 100%;
+      padding: 0;
+      span {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+      }
+    }
+  }
+
+  .carousel-slide {
+    max-width: 230px;
+    max-height: 230px;
+    width: 230px !important;
+    height: 230px !important;
+  }
+  // .carousel-arrow.is-hovered,  .carousel-arrow {
+  //   position: absolute;
+  //   top: -10%;
+  //   display: flex;
+  //   align-items: center;
+  //   justify-content: center;
+  //   width: 100px;
+  //   height: 10px;
+  //   background: red;
+  //   right: 0;
+  // }
+}
+
+.my-test-results-box--expaned {
+  min-height: auto !important;
+  padding: 0 !important;
+  max-width: 100% !important;
+}
+
+section.no-shadow {
+  // &:before {
+  //   content: 'My Test Results';
+  //   margin-bottom: 1rem;
+  //   display: inline-block;
+  //   padding-bottom: 4px;
+  //   border-bottom: 3px solid #1C1E1E;
+  // }
+
+  // div.carousel-list {
+  //   position: relative;
+  // }
+
+  div.carousel-list.has-shadow {
+    box-shadow: none;
+  }
+}
+
+.carousel-list.has-shadow {
+  box-shadow: none;
+}
+
+.appointment-slider {
+  min-height: 310px;
+}
+
+// font override as per guideline email/ticket
+.subtitle,
+p.subtitle {
+  text-transform: capitalize;
+}
+
+section.eventEditor {
+  padding-left: 0;
+  padding-right: 0;
+
+  label.label {
+    color: #bdc1c7;
+    font-family: "gothambook";
+  }
+  // div.control .icon {
+  //   padding-top: 2em !important;
+  //   height: unset !important;
+  // }
+
+  div.control.has-icons-left.has-icons-right input,
+  div.control.has-icons-left input,
+  div.control.has-icons-right input {
+    padding-left: 2.5em;
+  }
+
+  div.control .icon.is-right {
+    padding-top: calc(3.25em / 2 - (36px * 3 / 4) / 2);
+  }
+
+  div.control input.input {
+    padding-top: 1em !important;
+    border-radius: 10px !important;
+    color: #82878f;
+  }
+
+  div.control textarea {
+    border-radius: 10px !important;
+  }
+  input.input {
+    padding-top: 2em !important;
+    height: 4em !important;
+
+    &[type="text"] {
+      padding-left: 1em;
+    }
+
+    &.is-rounded {
+      border-radius: 8px;
+    }
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  tbody td {
+    padding: 1em !important;
+    align-items: center;
+  }
+
+  tbody td.detail button.button {
+    width: 155px;
+    margin-right: 0 !important;
+    padding-top: 0.4em !important;
+    padding-bottom: 0.4em !important;
+  }
+}
+
+//mobile overflow fix for home page
+@media only screen and (max-width: 769px) {
+  .collapse {
+    .card-header {
+      p {
+        padding: 1em 0.75em;
+        font-size: 1rem;
+      }
+    }
+  }
+  ul.pagination-list li.VuePagination__pagination-item {
+    list-style-type: none;
+  }
+}
+
+.tabs.is-boxed a {
+  border-color: lightgray;
+  color: gray;
+}
+
+.dahsboard .b-tabs .tabs {
+  padding-top: 8px;
+}
+
+body {
+  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#ffffff+0,f6f6f6+47,efefef+100 */
+  background: #ffffff; /* Old browsers */
+  background: -moz-linear-gradient(
+    top,
+    #ffffff 0%,
+    #f6f6f6 47%,
+    #efefef 100%
+  ); /* FF3.6-15 */
+  background: -webkit-linear-gradient(
+    top,
+    #ffffff 0%,
+    #f6f6f6 47%,
+    #efefef 100%
+  ); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(
+    to bottom,
+    #ffffff 0%,
+    #f6f6f6 47%,
+    #efefef 100%
+  ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#efefef',GradientType=0 ); /* IE6-9 */
+  footer.footer {
+    z-index: 1;
+  }
+}
+
+//workaround css fix for contacts route table
+.v-table div.VueTables__limit-field {
+  display: flex;
+  align-items: center;
+
+  label {
+    margin-right: 0.25em;
+  }
+}
+
+.container .box {
+  padding: 1.5em 2em;
+  overflow: hidden;
+}
+
+header.rx {
+  background-color: transparent;
+}
+
+.notification.box {
+  color: #fff;
+
+  &.is-success {
+    background-color: $newGreen;
+  }
+  &.is-danger {
+    background-color: $newRed;
+  }
+  &.is-dark {
+    background-color: $newNavyBlue;
+  }
+  &.is-primary {
+    background-color: $primary-color-mint;
+  }
+}
+
+.form-column {
+  .input-control,
+  .input-label-help {
+    position: relative;
+    top: -1rem;
+  }
+}
+
+.form-column input[type="text"] {
+  border: none;
+  border-bottom: 0.3px solid $light-thin-grey-shade;
+  border-radius: 0;
+
+  &:focus,
+  &:active {
+    box-shadow: none;
+  }
+}
+
+.column.connect-button-column .control {
+  button.button {
+    margin: 0 !important;
+    margin-top: 1.5rem !important;
+  }
+}
+
+label.help.has-text-weight-light {
+  font-weight: 100 !important;
+  color: $light-thin-grey-shade;
+  font-family: "gothamlight", Arial, sans-serif;
+
+  .form-column {
+    .input-control,
+    .input-label-help {
+      position: relative;
+      top: -1rem;
+    }
+  }
+}
+
+.form-column input[type="text"] {
+  border: none;
+  border-bottom: 0.3px solid $light-thin-grey-shade;
+  border-radius: 0;
+
+  &:focus,
+  &:active {
+    box-shadow: none;
+  }
+}
+
+.column.connect-button-column .control {
+  button.button {
+    margin: 0 !important;
+    margin-top: 1.5rem !important;
+  }
+}
+
+label.help.has-text-weight-light {
+  font-weight: 100 !important;
+  color: $light-thin-grey-shade;
+  font-family: "gothamlight", Arial, sans-serif;
+}
+
+.dashboard .tabs.is-boxed a {
+  border-color: gray;
+  color: $newTeal;
+}
+
+.has-content-flex-end {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.has-content-flex-centered {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.is-flex-end {
+  align-self: flex-end;
+}
+
+@media only screen and (max-width: 769px) {
+  .notifications-section {
+    &.ml-6 {
+      margin-left: 0 !important;
+    }
+    margin-top: 2em !important;
+  }
+}
+
+.enroll {
+  .container.box.contacts {
+    padding: 0;
+    border-radius: 0;
+    box-shadow: none;
+  }
+}
+
+//events manager table unhide
+@media screen and (max-width: 999px) {
+  div.b-table div.table-wrapper {
+    overflow-x: visible !important;
+  }
+}
+
+.carousel {
+  // padding-top: 3em;
+  // .carousel-slides {
+  //   padding-top: 1em;
+  // }
+  // .carousel-arrow {
+  //   position: absolute;
+  //   top: 3em;
+  //   right: 0;
+
+  //   .icon.has-icons-left {
+  //     left: -4.75em;
+  //   }
+  //   span.icon {
+  //     color: #7a7a7a;
+  //   }
+  // }
+}
+
+table {
+  &.table {
+    tr {
+      padding: 2em 0;
+    }
+    &.is-bordered td,
+    &.is-bordered th {
+      border-color: lightgray;
+      border-width: 2px;
+    }
+    &.is-narrow td,
+    &.is-narrow th {
+      padding: 2em 0.5em !important;
+    }
+  }
+}
+
+button.button.is-rectangle,
+button.is-rectangle {
+  border-radius: 0;
+  border-color: #02b1b2;
+  color: #02b1b2;
+  max-width: auto;
+  min-width: 80px;
+}
+
+input#selectAllCheckbox {
+  margin-left: 20px;
+}
+input#selectAllCheckbox:before {
+  content: "All";
+  font-size: 10px;
+  position: relative;
+  top: -3px;
+  left: -20px;
+}

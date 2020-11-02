@@ -1,0 +1,9 @@
+// -----------------------------------------------------------------------------
+// Abstracts: Single entry point for main.scss. 
+// Individual files are included here so main.scss can remain untouched
+// -----------------------------------------------------------------------------
+@import 'variables';
+@import 'breakpoints';
+@import 'functions';
+@import 'mixins';
+// @import 'animations';

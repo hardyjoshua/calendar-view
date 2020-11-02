@@ -1,0 +1,165 @@
+// -----------------------------------------------------------------------------
+// Colors
+// -----------------------------------------------------------------------------
+
+/// @type Color
+$token-color-core-white: #ffffff;
+$token-color-core-ultra-light-grey: #f5f5f5;
+$token-color-core-light-grey: #e0e0e0;
+$token-color-core-grey: #b3b3b3;
+$token-color-core-dark-grey: #666666;
+$token-color-core-ultra-dark-grey: #333333;
+$token-color-core-black: #000000;
+$token-color-core-blurple: #5700ff;
+$token-color-core-dark-blurple: #460f9e;
+$token-color-core-ultra-light-red: #fdefee;
+$token-color-core-light-red: #f6a09e;
+$token-color-core-red: #f0615e;
+$token-color-core-dark-red: #a84341;
+$token-color-core-ultra-dark-red: #481d1c;
+$token-color-core-light-blue: #bfefff;
+$token-color-core-light-purple: #eae2ff;
+$token-color-core-light-pink: #ffe6e6;
+$token-color-core-teal: #3fc4d2;
+$token-color-core-light-teal: #d2ffff;
+$token-color-core-orange: #ffa959;
+$token-color-core-light-orange: #fff2e6;
+$token-color-core-ultra-light-green: #e5f9ef;
+$token-color-core-light-green: #66e0a3;
+$token-color-core-green: #00cc66;
+$token-color-core-dark-green: #008e47;
+$token-color-core-ultra-dark-green: #003d1e;
+$token-color-core-ultra-light-yellow: #fdfae5;
+$token-color-core-light-yellow: #f4e467;
+$token-color-core-yellow: #eed202;
+$token-color-core-dark-yellow: #a69301;
+$token-color-core-ultra-dark-yellow: #473f00;
+
+// Brand tokens - use derived variables
+// $token-color-brand-primary-light: #eae2ff;
+// $token-color-brand-primary: #5700ff;
+$token-color-brand-primary-dark: #460f9e;
+// $token-color-brand-secondary-light: #d2ffff;
+$token-color-brand-secondary: #3fc4d2;
+// $token-color-brand-secondary-dark: #3fc4d2;
+// $token-color-brand-accent-primary: #3fc4d2;
+// $token-color-brand-accent-secondary: #f0615e;
+
+
+// Social Colors
+$token-color-social-facebook: #3b5998;
+$token-color-social-twitter: #1da1f2;
+$token-color-social-youtube: #ff0000;
+
+$blurple: #6816EB;
+$dark-blurple: #460f9e;
+$white: #ffffff;
+$black: #000000;
+
+$extra-light-grey: #f5f5f5;
+$light-grey: #e0e0e0;
+$grey: #b3b3b3;
+$dark-grey: #666666;
+
+$ui-green: #008542;
+$ui-red: #E91916;
+
+
+// Colors - Core Initial Variable Overvides
+/// Monochrome
+// $black: $token-color-core-black;
+$grey-darker: $token-color-core-ultra-dark-grey;
+$grey-dark: $dark-grey;
+// $grey:	$token-color-core-grey;
+$grey-light: $light-grey;
+$grey-lighter: $extra-light-grey;
+$grey-lightest: $token-color-core-ultra-light-grey;
+
+
+// Palette
+$orange: $token-color-core-orange;
+$yellow: $token-color-core-yellow;
+$turquoise: $token-color-core-teal;
+$cyan: $token-color-core-light-teal;
+$blue: $token-color-core-light-blue;
+
+$purple: purple;
+$red: $ui-red;
+$green: $ui-green;
+
+
+// -----------------------------------------------------------------------------
+// /*// BULMA */
+// -----------------------------------------------------------------------------
+
+
+// Derived Variables Overrides
+$navy: #132135;
+$mint: #8EC7B8;
+$sage: #2B585F;
+$teal: #02B1B2;
+
+$primary: $navy;
+$secondary: $mint;
+$warning: $token-color-core-light-yellow;
+$charcoal: #1C1E1E;
+
+// $border-light-hover	$grey-light
+$text: $charcoal;
+$text-light: $grey;
+$text-strong: $text;
+
+$link: $teal;
+// $link-invert	findColorInvert($link)
+// $link-light	findLightColor($link)
+// $link-dark	findDarkColor($link)
+$link-visited: $link;
+$link-hover: $link;
+$link-hover-border: $link;
+
+// $link-focus:	$grey-darker
+// $link-focus-border	$blue
+// $link-active	$grey-darker
+// $link-active-border	$grey-dark
+
+// $brand-primary: $primary;
+// $primary-invert: findColorInvert($primary);
+
+$dark: $primary;
+// $dark-invert: findColorInvert(#6816EB);
+
+// $white: $token-color-core-white;
+// $black: $token-color-core-black;
+$light: $light-grey;
+// $light-invert: findColorInvert($light);
+
+$success: $green;
+$warning: $orange;
+$info: $teal;
+$danger: $red;
+
+// $success-invert: findColorInvert($success);
+// $warning-invert: findColorInvert($warning);
+// $info-invert: findColorInvert($info);
+// $danger-invert: findColorInvert($danger);
+
+
+$twitter: $token-color-social-twitter;
+// $twitter-invert: findColorInvert($twitter);
+$button-text-hover-background-color: $dark;
+
+
+/*// Setup $colors to use as bulma classes and inverts if preferred (e.g. 'is-twitter')*/
+
+// $colors: (
+//     "white": ($white, $black),
+//     "black": ($black, $white),
+//     "light": ($light, $light-invert),
+//     "dark":  ($dark, $dark-invert),
+//     "primary": ($primary, $primary-invert),
+//     "info":    ($info, $info-invert),
+//     "success": ($success, $success-invert),
+//     "warning": ($warning, $warning-invert),
+//     "danger":  ($danger, $danger-invert),
+//     "twitter": ($twitter, $twitter-invert)
+// );

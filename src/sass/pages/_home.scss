@@ -1,0 +1,39 @@
+// -----------------------------------------------------------------------------
+// This file contains styles that are specific to the home page.
+// -----------------------------------------------------------------------------
+.box-list {
+  margin-bottom: 1em;
+  a {
+    // background-color: $light;
+    color: $teal;
+    border-color: $teal;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+  .svg-inline--fa.fa-file-medical,
+  .svg-inline--fa.fa-w-8 {
+    margin-top: 0.5em;
+  }
+  .svg-inline--fa.fa-file-medical {
+    margin-right: 1em;
+  }
+}
+.has-background-light-mint {
+  background-color: #b9dad2;
+}
+#product-list {
+  p small {
+    font-size: $baseUnit * 3.5;
+    line-height: 20px;
+  }
+}
+.title {
+  margin-bottom: 0.5em;
+}
+.subtitle.is-6 {
+  margin-bottom: 1em;
+}
+.currency {
+  text-transform: uppercase;
+}

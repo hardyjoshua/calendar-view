@@ -1,0 +1,58 @@
+// -----------------------------------------------------------------------------
+// Layout: Single entry point for main.scss.
+// Individual files are included here so main.scss can remain untouched
+// -----------------------------------------------------------------------------
+
+@import "header";
+@import "navigation";
+@import "footer";
+@import "page";
+
+.container {
+  padding: 1em;
+  z-index: 2;
+}
+
+.activities-container {
+  display: flex;
+  align-content: center;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 500px;
+  margin: 0 auto 20px;
+
+  .current {
+    background: #c8e2bd;
+  }
+}
+
+.activities-item {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.activities-circle {
+  border: 1px solid green;
+  width: 100%;
+  height: 20px;
+  // border-radius: 50%;
+  background: #fff;
+  &.active {
+    background: green;
+  }
+}
+.activities-name {
+  visibility: hidden;
+}
+
+#content {
+  padding: 1em;
+  z-index: 2;
+}
+
+.box {
+  background-color: white;
+}

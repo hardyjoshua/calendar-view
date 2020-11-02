@@ -1,0 +1,65 @@
+// -----------------------------------------------------------------------------
+// This file contains all application-wide Sass variables.
+// -----------------------------------------------------------------------------
+
+
+/// Units 
+/// @type Number
+$baseUnit: 4px;
+$gapUnit: $baseUnit*5;
+
+// -----------------------------------------------------------------------------
+// Breakpoints
+// -----------------------------------------------------------------------------
+
+
+$token-breakpoint-mobile-small: 320px;
+$token-breakpoint-mobile: 375px;
+$token-breakpoint-mobile-medium: 375px;
+$token-breakpoint-mobile-large: 425px;
+$token-breakpoint-tablet: 768px;
+$token-breakpoint-tablet-large: 1024px;
+$token-breakpoint-laptop: 1024px;
+$token-breakpoint-laptop-medium: 1280px;
+$token-breakpoint-laptop-large: 1440px;
+$token-breakpoint-web-max: 1600px;
+
+/// Breakpoints map
+/// @prop {String} keys - Keys are identifiers mapped to a given length
+/// @prop {Map} values - Values are actual breakpoints expressed in pixels
+$breakpoints: (
+        'small': 320px,
+        'medium': 768px,
+        'large': 1024px,
+) !default;
+
+/// Container's maximum width
+/// @type Length
+$max-width: 1180px !default;
+
+
+// -----------------------------------------------------------------------------
+// Path
+// -----------------------------------------------------------------------------
+
+/// Relative or absolute URL where all assets are served from
+/// @type String
+/// @example scss - When using a CDN
+///   $base-url: 'http://cdn.example.com/assets/';
+$base-url: '/assets/' !default;
+
+/// SDC Variables from Tokens
+/// @TODO - refactor
+
+// -----------------------------------------------------------------------------
+// Borders
+// -----------------------------------------------------------------------------
+
+$token-border-radius-base: 8px;
+$token-border-width-base: 2px;
+
+// -----------------------------------------------------------------------------
+// Relative Whitespace 
+// -----------------------------------------------------------------------------
+// - tokens removed. use calculations instead
+

@@ -1,0 +1,34 @@
+// -----------------------------------------------------------------------------
+// Animation Mixins
+// -----------------------------------------------------------------------------
+
+/// Rotation - controlled parameter animation for spinning any element
+
+@keyframes infiniteRotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@mixin infiniteRotate {
+  /*animation:
+  infiniteRotate
+  1.5s
+  ease-out
+  0s
+  alternate
+  infinite
+  none
+  running;*/
+  animation-name: infiniteRotate;
+  animation-duration: 0.5s;
+  animation-timing-function: ease-in-out;
+  animation-delay: 0s;
+  animation-direction: forward;
+  animation-iteration-count: infinite;
+  animation-fill-mode: none;
+  animation-play-state: running;
+}

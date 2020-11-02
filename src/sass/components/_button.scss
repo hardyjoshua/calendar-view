@@ -1,0 +1,52 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the button component.
+// -----------------------------------------------------------------------------
+a.button,
+.button {
+  border-radius: $baseUnit * 10;
+  // font-weight: $weight-semibold;
+  // line-height: 1em;
+  height: auto;
+  min-width: 120px;
+  letter-spacing: 0.2px; // to avoid fuzzy look of the font against blurple
+  $borderWidth: 1px;
+  // size
+  $paddingUnit: $baseUnit * 3 - $borderWidth;
+  padding-left: $baseUnit * 5;
+  padding-right: $baseUnit * 5;
+  padding-top: $paddingUnit;
+  padding-bottom: $paddingUnit;
+  margin-bottom: $gapUnit;
+  border-color: $primary;
+
+  &.is-inline {
+    padding: $baseUnit * 1.75 $baseUnit * 3;
+  }
+
+  &:hover {
+    opacity: 0.9;
+    // &.is-primary{
+    //   background-color: $dark;
+    // }
+  }
+
+  &:not(.is-mobile) {
+    @include mobile {
+      width: 100%;
+    }
+  }
+
+  &.is-small {
+    font-size: $size-small;
+    border-radius: $baseUnit * 10;
+    padding-top: $paddingUnit/2;
+    padding-bottom: $paddingUnit/2;
+  }
+}
+
+button a,
+a.button {
+  &:hover {
+    text-decoration: none;
+  }
+}

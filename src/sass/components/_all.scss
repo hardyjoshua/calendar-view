@@ -1,0 +1,10 @@
+// -----------------------------------------------------------------------------
+// Components: Single entry point for main.scss.
+// Individual files are included here so main.scss can remain untouched
+// -----------------------------------------------------------------------------
+
+@import "button";
+@import "form-elements";
+@import "dateslider";
+@import "appointmentsummary";
+@import "tables";

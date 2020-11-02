@@ -1,0 +1,16 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the date slider
+// -----------------------------------------------------------------------------
+
+article.appointment-summary {
+  @include mobile-large {
+    article {
+      display: flex;
+
+      .meta {
+        display: flex;
+        flex-direction: column;
+      }
+    }
+  }
+}

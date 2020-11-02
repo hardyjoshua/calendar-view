@@ -1,0 +1,133 @@
+// @TODO - overrides if relevant
+// custom fonts
+
+@font-face {
+  font-family: 'gotham';
+  src: url('/fonts/gotham/gothammedium_regular-webfont.woff2') format('woff2'),
+  url('/fonts/gotham/gothammedium_regular-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;  
+}
+
+@font-face {
+  font-family: 'gothamlight';
+  src: url('/fonts/gotham/gotham_light_regular-webfont.woff2') format('woff2'),
+  url('/fonts/gotham/gotham_light_regular-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  
+}
+@font-face {
+  font-family: 'miller';
+  src: url('/fonts/miller/miller-displayroman-webfont.woff2') format('woff2'),
+  url('/fonts/miller/miller-displayroman-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+    font-family: 'droid_serifregular';
+    src: url('/fonts/Droidserif/DroidSerif-Regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+
+// Font Family
+/// @type List
+// $family-sans-serif: 'miller', Arial, Helvetica, sans-serif;
+$family-sans-serif: 'gothamlight',  Arial, sans-serif;
+$token-text-stack-serif-primary: serif;
+$token-text-stack-monospace-primary: monospace, 'Courier New', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Monaco' !default;
+$body-family: $family-sans-serif;
+$family-primary: $family-sans-serif;
+/* ------------------------------------ 
+   BULMA OVERRIDES
+------------------------------------*/
+// Font Stacks
+$family-primary: $family-sans-serif;
+$family-secondary: $family-sans-serif;
+$family-code: $token-text-stack-monospace-primary;
+$family-headline: 'gotham', Arial, Helvetica, sans-serif;
+$family-subheadline: 'droid_serifregular', Arial, Helvetica, sans-serif;
+
+// Spacing
+$block-spacing: 1.5rem !default// Responsiveness
+// The container horizontal gap, which acts as the offset for breakpoints
+$gap: $gapUnit !default// 960, 1152, and 1344 have been chosen because they are divisible by both 12 and 16
+$tablet: 769px !default// 960px container + 4rem
+$desktop: 960px + (2 * $gap) !default// 1152px container + 4rem
+$widescreen: 1152px + (2 * $gap) !default
+$widescreen-enabled: true !default// 1344px container + 4rem
+$fullhd: 1344px + (2 * $gap) !default
+$fullhd-enabled: true !default// Miscellaneous
+$easing: ease-out !default
+$radius-small: 2px !default
+$radius: 4px !default
+$radius-large: 6px !default
+$radius-rounded: 290486px !default
+$speed: 86ms !default
+
+$size-1: $baseUnit*10;
+$size-2: $baseUnit*4;
+$size-3: $baseUnit*9;
+$size-4: $baseUnit*9; // 36
+$size-5: $baseUnit*6; // 24
+$size-6: $baseUnit*4.5; // 18px
+$size-7: $baseUnit*3.5; // 16
+$size-8: $baseUnit*3; // 12
+
+$size-xsmall: $size-8;
+$size-small: $size-7;
+$size-normal: $size-6;
+$size-medium: $size-5;
+$size-large: $size-4;
+
+
+@for $i from 1 through 6 {
+  .mrx-#{$i}{
+    margin-right: #{$i}em !important;
+  }
+  .mlx-#{$i}{
+    margin-left: #{$i}em !important;
+  }
+  .mtx-#{$i}{
+    margin-top: #{$i}em !important;
+  }
+  .mbx-#{$i}{
+    margin-bottom: #{$i}em !important;
+  }
+}
+
+
+// button mixins
+// =button-small
+// border-radius: $radius-small
+// font-size: $size-small
+// =button-normal
+// font-size: $size-normal
+// =button-medium
+// font-size: $size-medium
+// =button-large
+// font-size: $size-large
+
+// @TODO - override these
+// -------
+// $link: $purple;
+$body-background-color: white;
+$control-border-width: 2px;
+$input-shadow: none;
+
+
+$section-padding: $gapUnit 0 !default;
+$section-padding-medium: $gapUnit*3 0 !default;
+$section-padding-large: $gapUnit*6 0 !default;
+
+* {
+  font-family: $family-primary
+}
+
+.modal-card-body{
+  padding: 0;
+}

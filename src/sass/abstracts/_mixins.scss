@@ -1,0 +1,122 @@
+// -----------------------------------------------------------------------------
+// This file contains all application-wide Sass mixins.
+// -----------------------------------------------------------------------------
+
+/// Event wrapper
+/// @author Harry Roberts
+/// @param {Bool} $self [false] - Whether or not to include current selector
+/// @link https://twitter.com/csswizardry/status/478938530342006784 Original tweet from Harry Roberts
+@mixin on-event($self: false) {
+  @if $self {
+    &,
+    &:hover,
+    &:active,
+    &:focus {
+      @content;
+    }
+  } @else {
+    &:hover,
+    &:active,
+    &:focus {
+      @content;
+    }
+  }
+}
+
+
+/// Make a context based selector a little more friendly
+/// @author Hugo Giraudel
+/// @param {String} $context
+@mixin when-inside($context) {
+  #{$context} & {
+    @content;
+  }
+}
+
+
+@mixin background-image-retina($file, $type, $width, $height) {
+  background-image: url('./assets/' + $file + '.' + $type);
+  background-repeat: no-repeat;
+  @media only screen and (-webkit-min-device-pixel-ratio: 2),
+  only screen and (-moz-min-device-pixel-ratio: 2),
+  only screen and (-o-min-device-pixel-ratio: 2/1),
+  only screen and (min-device-pixel-ratio: 2),
+  only screen and (min-resolution: 192dpi),
+  only screen and (min-resolution: 2dppx) {
+    & {
+      background-image: url('./assets/' + $file + '@2x.' + $type);
+      -webkit-background-size: $width $height;
+      -moz-background-size: $width $height;
+      -o-background-size: $width $height;
+      background-size: $width $height;
+    }
+  }
+}
+
+@mixin background-image($file, $type, $width, $height) {
+  background-image: url('./assets/' + $file + '.' + $type);
+  background-repeat: no-repeat;
+  background-size: $width $height;
+}
+
+@mixin background-image-gradient($direction, $start_color, $middle_color, $stop_color) {
+  background-image: linear-gradient($direction, $start_color 0%, $middle_color 100%, $stop_color 0%);
+}
+
+@mixin animate-width-height {
+  -webkit-transition: width 4s, height 3s; /* For Safari 3.1 to 6.0 */
+  transition: width 4s, height 3s;
+}
+
+@mixin centerer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin fontFace($family,$src,$style: normal,$weight: normal) {
+  @font-face {
+    font-family: $family;
+    src: url('#{$src}.eot'); // IE9 compat
+    src: url('#{$src}.eot?#iefix') format('embedded-opentype'), // IE8 and below
+    url('#{$src}.woff') format('woff'), // standards
+    url('#{$src}.ttf') format('truetype'), // Safari, Android, iOS
+    url('#{$src}.svg##{$family}') format('svg'); // legacy iOS
+    font-style: $style;
+    font-weight: $weight;
+  }
+}
+
+@mixin autocomplete() {
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover, 
+  input:-webkit-autofill:focus,
+  textarea:-webkit-autofill,
+  textarea:-webkit-autofill:hover,
+  textarea:-webkit-autofill:focus,
+  select:-webkit-autofill,
+  select:-webkit-autofill:hover,
+  select:-webkit-autofill:focus {
+    @content
+  }
+}
+
+@mixin placeholder() {
+  \::-webkit-input-placeholder {
+    @content
+  }
+  \:-moz-placeholder {
+    @content
+  }
+  \::-moz-placeholder {
+    @content
+  }
+  \:-ms-input-placeholder {
+    @content
+  }
+}
+
+
+
+

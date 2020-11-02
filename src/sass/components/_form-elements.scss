@@ -1,0 +1,97 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to form components.
+// -----------------------------------------------------------------------------
+
+label *,
+button *,
+.button * {
+  font-family: $family-headline;
+}
+label,
+.label {
+  font-size: $baseUnit * 3.5;
+}
+
+input,
+.input {
+  border: 1px solid $grey-light;
+  border-radius: $baseUnit * 2;
+  box-shadow: none;
+
+  &:focus {
+    border-color: $primary;
+  }
+
+  @include placeholder() {
+    font-size: 1em;
+    background-color: white;
+  }
+
+  // @include autocomplete() {
+  //   background-color:red;
+  // }
+}
+a,
+button {
+  &.button.is-primary {
+    background-color: $teal;
+  }
+}
+button.is-primary {
+  border-color: $teal;
+}
+
+/* Change autocomplete styles in WebKit */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  -webkit-text-fill-color: black;
+  -webkit-box-shadow: 0 0 0px 1000px #fff inset;
+}
+
+// :-webkit-autofill {
+//   color: inherit;
+//   opacity: 1;
+//   background-color :white;
+//   box-shadow: inset 0 0 0 220px white !important;
+//   -webkit-text-fill-color: white;
+// }
+
+// :-webkit-autofill:focus {
+//   color: inherit;
+//   -webkit-text-fill-color: black;
+// }
+
+// ::-webkit-input-placeholder {
+//   color: inherit;
+//   opacity: 1;
+//   background-color: white;
+//   box-shadow: inset 0 0 0 220px #fff !important;
+// }
+
+// ::-moz-placeholder {
+//   color: inherit;
+//   opacity: 1;
+//   background-color: #fff;
+//   box-shadow: inset 0 0 0 220px #222 !important;
+// }
+
+// :-ms-input-placeholder {
+//   color: inherit;
+//   opacity: 1;
+//   background-color: #fff;
+//   box-shadow: inset 0 0 0 220px #222 !important;
+// }
+
+// ::-ms-input-placeholder {
+//   color: inherit;
+//   opacity: 1;
+//   background-color: #fff;
+//   box-shadow: inset 0 0 0 220px #fff !important;
+// }

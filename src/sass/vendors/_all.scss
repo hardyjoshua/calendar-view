@@ -1,0 +1,47 @@
+/*Vendor*/
+// NOTE - Normalize reset loaded in style.scss as first file
+/* ------------------------------
+    Buefy
+------------------------------*/
+@import "~buefy/src/scss/buefy";
+
+//@Ben TODO Sorry i wasnt able to see the spinner so i had to add this :D
+.b-table.is-loading:after {
+  border: 2px solid #000000;
+  border-radius: 290486px;
+  border-right-color: transparent;
+  border-top-color: transparent;
+}
+
+.VueTables {
+  tbody {
+    font-size: 14px;
+  }
+}
+.table.is-striped tbody tr:not(.is-selected):nth-child(even):hover,
+.table.is-hoverable.is-striped tbody tr:not(.is-selected):hover {
+  background-color: $light-grey !important;
+}
+/* ------------------------------
+    Multiselect
+------------------------------*/
+// @import '../node_modules/vue-multiselect/dist/vue-multiselect.min.css';
+// @import 'multiselect';
+
+/* ------------------------------ 
+    Date Picker
+------------------------------*/
+// @import '../node_modules/vue-ctk-date-time-picker/dist/vue-ctk-date-time-picker.css';
+// @import 'VueCtkDateTimePicker';
+
+/* ------------------------------ 
+    Google Maps
+------------------------------*/
+// @TODO - are you really utilizing all of Buefy, or just parts?
+// @import 'googlemaps';
+
+/* ------------------------------ 
+    Google Autocomplete
+------------------------------*/
+// @TODO - are you really utilizing all of Buefy, or just parts?
+// @import 'googleautocomplete';

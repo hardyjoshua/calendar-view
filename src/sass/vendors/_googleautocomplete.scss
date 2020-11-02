@@ -1,0 +1,24 @@
+// Google Auto Complete - search for location etc
+
+#googleAutocomplete {
+  display: block;
+  max-width: 480px;
+  margin: 1em auto;
+  padding: 0.75em 1em;
+  height: auto;
+  line-height: 1.5;
+  background-position: right 1em center;
+  color: $black;
+  @include background-image('search@2x', 'png', 24px, 24px);
+
+  &:active,
+  &:focus {
+    border-color: $primary;
+    box-shadow: none;
+  }
+
+  @include placeholder() {
+    color: $grey-dark;
+    font-size: 1rem;
+  }
+}

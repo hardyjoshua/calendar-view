@@ -1,0 +1,167 @@
+// -----------------------------------------------------------------------------
+// Breakpoints
+// -----------------------------------------------------------------------------
+
+$token-breakpoint-mobile-small: 320px;
+$token-breakpoint-mobile: 375px;
+// $token-breakpoint-mobile-medium: 375px;
+
+$token-breakpoint-mobile-large: 425px;
+$token-breakpoint-tablet: 768px;
+
+// $token-breakpoint-tablet-large: 1024px;
+$token-breakpoint-laptop: 1024px;
+$token-breakpoint-laptop-medium: 1280px;
+$token-breakpoint-laptop-large: 1440px;
+$token-breakpoint-web-max: 1600px;
+
+// 
+
+$wearable-width: 320px;
+$iphone_6s_Plus: 414px;
+$mobile-width: 600px;
+$tablet-width: 768px;
+$laptop-width: 1000px;
+$notebook-width: 1200px;
+$desktop-width: 1448px;
+$bigboy-width: 2000px;
+
+
+@mixin mobile-small {
+  @media (max-width: #{$token-breakpoint-mobile - 1px}) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media (min-width: #{$token-breakpoint-mobile}) {
+    @content;
+  }
+}
+
+// @mixin mobile_only {
+//   @media (max-width: #{$tablet-width - 1px}) {
+//     @content;
+//   }
+// }
+
+@mixin mobile-large {
+  @media (min-width: #{$token-breakpoint-mobile-large - 1px}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: #{$token-breakpoint-tablet}) {
+    @content;
+  }
+}
+
+@mixin laptop {
+  @media (min-width: #{$token-breakpoint-laptop}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: #{$token-breakpoint-laptop-medium}) {
+    @content;
+  }
+}
+
+@mixin desktop-large {
+  @media (min-width: #{$token-breakpoint-laptop-large}) {
+    @content;
+  }
+}
+
+@mixin web-max {
+  @media (min-width: #{$token-breakpoint-web-max}) {
+    @content;
+  }
+}
+
+
+@mixin retina {
+  @media only screen and (-webkit-min-device-pixel-ratio: 2),
+  only screen and (min--moz-device-pixel-ratio: 2),
+  only screen and (-o-min-device-pixel-ratio: 2/1),
+  only screen and (min-device-pixel-ratio: 2),
+  only screen and (min-resolution: 192dpi),
+  only screen and (min-resolution: 2dppx) {
+    @content;
+  }
+}
+
+@mixin print {
+  @media print {
+    @content;
+  }
+}
+
+/* Responsive */
+.portrait-notification {
+  display: none;
+}
+
+@media only screen and (orientation: portrait) {
+  .portrait-notification {
+    display: block;
+  }
+}
+
+
+html.debug {
+  &::before {
+    opacity: 0.4;
+    font-weight: 700;
+    text-transform: uppercase;
+    content: '';
+    position: absolute;
+    bottom: 50%;
+    right: 5px;
+    color: red;
+    min-width: 10px;
+    min-height: 10px;
+    z-index: 999;
+
+    @include mobile-small() {
+      content: 'mobile-small';
+    }
+    @include mobile() {
+      content: 'mobile';
+    }
+    @include mobile-large() {
+      content: 'mobile-large';
+    }
+    @include tablet {
+      content: 'tablet';
+    }
+    @include laptop {
+      content: 'laptop';
+    }
+    @include desktop() {
+      content: 'desktop';
+    }
+    @include desktop-large() {
+      content: 'desktop-large';
+    }
+    @include web-max() {
+      content: 'web-max';
+    }
+  }
+
+  &::after {
+    opacity: 0.4;
+    font-weight: 700;
+    text-transform: uppercase;
+    position: absolute;
+    bottom: 52%;
+    right: 5px;
+    color: red;
+    z-index: 999;
+    @include retina {
+      content: 'retina';
+    }
+  }
+}
