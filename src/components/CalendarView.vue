@@ -32,7 +32,7 @@ export default {
   },
   methods: {
     dateFormatter(date){
-      return moment(date).format("MM/DD/YYYY")
+      return moment(date).format("dddd, MMMM Do YYYY")
     },
     setSelctableDates() {
       const dates = [
