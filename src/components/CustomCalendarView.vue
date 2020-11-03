@@ -1,14 +1,16 @@
 <template>
-  <section class="calendar-view">
-    <b-field label="Select a date">
+  <section class="calendar-customview">
+    <b-field label="Task 5: Custom View">
       <b-datepicker
         v-model="selected"
         :date-formatter="dateFormatter"
         :show-week-number="showWeekNumber"
         :locale="locale"
-        :selectable-dates="selectableDates"
+        :input="dateSelected(selected)"
         placeholder="Click to select..."
-        trap-focus>
+        trap-focus
+      >
+        <span class="calendar-customview__footer">{{footerDate}}</span>
       </b-datepicker>
     </b-field>
   </section>
@@ -18,44 +20,54 @@
 import moment from 'moment-timezone'
 
 export default {
-  name: 'CalendarView',
+  name: 'CustomCalendarView',
   data() {
     return {
       selected: new Date(),
       showWeekNumber: false,
       locale: undefined,
       selectableDates: [],
+      footerDate: '',
+      dateField: null,
     }
   },
   mounted() {
-    this.setSelctableDates()
+    this.dateField = document.querySelector('.calendar-customview .field-body')
+    this.setMonthField(moment(this.selected).format("MMMM"))
+    document.querySelector('.calendar-customview .pagination-next').addEventListener('click', this.monthChanged)
   },
   methods: {
     dateFormatter(date){
       return moment(date).format("dddd, MMMM Do YYYY")
     },
-    setSelctableDates() {
-      const dates = [
-        { date: "2020-11-02" },
-        { date: "2020-11-04" },
-        { date: "2020-11-05" },
-        { date: "2020-11-07" },
-        { date: "2020-11-08" }
-      ]
-      dates.forEach(item => {
-        const dateItem = moment(item.date).utcOffset(item.date).toDate();
-        this.selectableDates.push(dateItem)
-      })
+    setMonthField(month) {
+      if (this.dateField)
+        this.dateField.innerHTML = month
+    },
+    dateSelected(date) {
+      this.footerDate = moment(date).format("MMMM D, YYYY")
+      this.setMonthField(moment(date).format("MMMM"))
+    },
+    monthChanged() {
+      this.setMonthField(moment(this.selected).format("MMMM"))
     }
   }
 }
 </script>
 
 <style lang="scss">
-  .calendar-view {
+  .calendar-customview {
     width: 40%;
     max-width: 420px;
     padding: 40px;
+
+    &__footer {
+      font-weight: bold;
+    }
+
+    .field-body {
+      color: black;
+    }
 
     // override styles of datepicker
     & header {
