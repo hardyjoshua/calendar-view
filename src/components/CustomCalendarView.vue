@@ -28,29 +28,22 @@ export default {
       locale: undefined,
       selectableDates: [],
       footerDate: '',
-      dateField: null,
     }
   },
   mounted() {
-    this.dateField = document.querySelector('.calendar-customview .field-body')
-    this.setMonthField(moment(this.selected).format("MMMM"))
-    document.querySelector('.calendar-customview .pagination-next').addEventListener('click', this.monthChanged)
+    this.hideYearSelect()
   },
   methods: {
-    dateFormatter(date){
+    dateFormatter(date) {
       return moment(date).format("dddd, MMMM Do YYYY")
     },
-    setMonthField(month) {
-      if (this.dateField)
-        this.dateField.innerHTML = month
+    hideYearSelect() {
+      const yearSelect = document.querySelectorAll('.calendar-customview .control .select')[1]
+      yearSelect.style.display = 'none';
     },
     dateSelected(date) {
       this.footerDate = moment(date).format("MMMM D, YYYY")
-      this.setMonthField(moment(date).format("MMMM"))
     },
-    monthChanged() {
-      this.setMonthField(moment(this.selected).format("MMMM"))
-    }
   }
 }
 </script>
@@ -70,8 +63,38 @@ export default {
     }
 
     // override styles of datepicker
+    & .control {
+      & .select {
+        select {
+          border: none;
+          padding-right: 0;
+          padding-left: 0;
+          text-align-last: center;
+          font-weight: bold;
+        }
+
+        &.select:not(.is-multiple):not(.is-loading)::after {
+          display: none;
+        }
+      }
+    }
+
     & header {
       background-color: initial;
+    }
+
+    & .datepicker .datepicker-table .datepicker-body .datepicker-cell.is-today {
+      border-radius: 50%;
+    }
+
+    & .datepicker .datepicker-table .datepicker-body .datepicker-cell.is-selectable:hover:not(.is-selected) {
+      text-decoration: none;
+      border-radius: 50%;
+    }
+
+    & .datepicker .datepicker-table .datepicker-body .datepicker-cell.is-selected {
+      border-radius: 50%;
+      background-color: #008e47;
     }
 
     & .control.has-icons-left .input {
@@ -89,6 +112,10 @@ export default {
 
     & .pagination {
       font-size: 1rem;
+    }
+
+    @media screen and (max-width: 600px) {
+      width: 100%;
     }
   }
 </style>

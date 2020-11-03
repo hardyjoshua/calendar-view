@@ -62,6 +62,10 @@ export default {
       background-color: initial;
     }
 
+    & a:hover {
+      text-decoration: none;
+    }
+
     & .control.has-icons-left .input {
       padding-left: 1rem;
     }
@@ -77,6 +81,10 @@ export default {
 
     & .pagination {
       font-size: 1rem;
+    }
+
+    @media screen and (max-width: 600px) {
+      width: 100%;
     }
   }
 </style>

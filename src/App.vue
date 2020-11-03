@@ -26,5 +26,9 @@ export default {
 .calendarview {
   display: flex;
   align-items: center;
+
+  @media screen and (max-width: 600px) {
+    flex-direction: column;
+  }
 }
 </style>
