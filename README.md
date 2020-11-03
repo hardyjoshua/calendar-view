@@ -1,24 +1,17 @@
-# calendar-task
+# DatePicker with Buefy
 
-## Project setup
-```
-yarn install
-```
+![quote application example](datepicker.gif)
 
-### Compiles and hot-reloads for development
-```
-yarn serve
-```
+## Setting up environment
 
-### Compiles and minifies for production
-```
-yarn build
-```
+- Install Node 12.16.1
+- Install Yarn `npm i -g yarn`
+- Install dependencies `yarn install`
+- Run the app `yarn serve`
 
-### Lints and fixes files
-```
-yarn lint
-```
+## Technologies
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+- VueJS
+- MomentJS
+- [Buefy Datepicker](https://buefy.org/documentation/datepicker)
+- SCSS
